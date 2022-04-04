@@ -1,5 +1,6 @@
 <?php
 	$fileTypeAllowedList = array("jpg", "png", "jpeg", "gif", "pdf", "txt", "py", "cpp", "docx", "xlsx");
+	$maxSize = 10000000;
 	function exist($target){// Check if file already exists
 		global $uploadOk;
 		if (file_exists($target)) {
@@ -42,7 +43,7 @@
 
 
 	exist($target_file);
-	size($target_file, 10000000);
+	size($target_file, $maxSize);
 	allowedType($target_file, $fileType);
 	
 	saveFile($target_file);
